@@ -321,12 +321,10 @@ Our work is primarily based on [OminiControl](https://github.com/Yuanshi9815/Omi
 
 If you find our paper and code helpful for your research, please consider starring our repository ⭐ and citing our work ✏️.
 ```bibtex
-@misc{lan2025fluxtext,
-    title={FLUX-Text: A Simple and Advanced Diffusion Transformer Baseline for Scene Text Editing},
-    author={Rui Lan and Yancheng Bai and Xu Duan and Mingxing Li and Lei Sun and Xiangxiang Chu},
-    year={2025},
-    eprint={2505.03329},
-    archivePrefix={arXiv},
-    primaryClass={cs.CV}
+@article{lan2025flux,
+  title={Flux-text: A simple and advanced diffusion transformer baseline for scene text editing},
+  author={Lan, Rui and Bai, Yancheng and Duan, Xu and Li, Mingxing and Jin, Dongyang and Xu, Ryan and Sun, Lei and Chu, Xiangxiang},
+  journal={arXiv preprint arXiv:2505.03329},
+  year={2025}
 }
 ```
