@@ -7,9 +7,10 @@ FLUX-Text: A Simple and Advanced Diffusion Transformer Baseline for Scene Text E
 <a href="https://huggingface.co/GD-ML/FLUX-Text/"><img src="https://img.shields.io/badge/🤗_HuggingFace-Model-ffbd45.svg" alt="HuggingFace"></a>
 <!-- <a ><img src="https://img.shields.io/badge/🤗_HuggingFace-Model-ffbd45.svg" alt="HuggingFace"></a> -->
 
-> *[Rui Lan](https://scholar.google.com/citations?user=zwVlWXwAAAAJ&hl=zh-CN), [Yancheng Bai](https://scholar.google.com/citations?hl=zh-CN&user=Ilx8WNkAAAAJ&view_op=list_works&sortby=pubdate), [Xu Duan](https://scholar.google.com/citations?hl=zh-CN&user=EEUiFbwAAAAJ), [Mingxing Li](https://scholar.google.com/citations?hl=zh-CN&user=-pfkprkAAAAJ), [Dongyang Jin](https://scholar.google.com/citations?user=1xA5KxAAAAAJ&hl=zh-CN), [Ryan Xu](https://scholar.google.com/citations?user=MDrO_twAAAAJ&hl=en&oi=ao), [Dong Nie](https://scholar.google.com/citations?user=wk0hUKgAAAAJ&hl=en), [Lei Sun](https://allylei.github.io), [Xiangxiang Chu](https://scholar.google.com/citations?hl=zh-CN&user=jn21pUsAAAAJ&view_op=list_works&sortby=pubdate)*
+> *[Rui Lan](https://scholar.google.com/citations?user=zwVlWXwAAAAJ&hl=zh-CN)<sup>1</sup>, [Yancheng Bai](https://scholar.google.com/citations?hl=zh-CN&user=Ilx8WNkAAAAJ&view_op=list_works&sortby=pubdate)<sup>1</sup>, [Xu Duan](https://scholar.google.com/citations?hl=zh-CN&user=EEUiFbwAAAAJ)<sup>1</sup>, [Mingxing Li](https://scholar.google.com/citations?hl=zh-CN&user=-pfkprkAAAAJ)<sup>1</sup>, [Dongyang Jin](https://scholar.google.com/citations?user=1xA5KxAAAAAJ&hl=zh-CN)<sup>1</sup>, [Ryan Xu](https://scholar.google.com/citations?user=MDrO_twAAAAJ&hl=en&oi=ao)<sup>1</sup>, [Dong Nie](https://scholar.google.com/citations?user=wk0hUKgAAAAJ&hl=en)<sup>2</sup>, [Lei Sun](https://allylei.github.io)<sup>1</sup>, [Xiangxiang Chu](https://scholar.google.com/citations?hl=zh-CN&user=jn21pUsAAAAJ&view_op=list_works&sortby=pubdate)<sup>1</sup>*
 > <br>
-> ALibaba Group
+> <sup>1</sup>ALibaba Group
+> <sup>2</sup>University of North Carolina at Chapel Hill
 
 <img src='assets/demo1.jpg'>
 
