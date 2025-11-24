@@ -324,7 +324,7 @@ If you find our paper and code helpful for your research, please consider starri
 ```bibtex
 @article{lan2025flux,
   title={Flux-text: A simple and advanced diffusion transformer baseline for scene text editing},
-  author={Lan, Rui and Bai, Yancheng and Duan, Xu and Li, Mingxing and Jin, Dongyang and Xu, Ryan and Sun, Lei and Chu, Xiangxiang},
+  author={Lan, Rui and Bai, Yancheng and Duan, Xu and Li, Mingxing and Jin, Dongyang and Xu, Ryan and Nie, Dong and Sun, Lei and Chu, Xiangxiang},
   journal={arXiv preprint arXiv:2505.03329},
   year={2025}
 }
