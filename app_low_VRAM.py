@@ -138,26 +138,46 @@ def get_captions(ori_image, _input_file):
     caption = f'{generated_text}, that reads "{_input_file}"'
     return caption
 
-def get_glyph_pos(mask, _input_file, width, height):
+def get_glyph_pos(mask, _input_file, width, height, add_space=False):
     mask = mask.astype('uint8')
     contours, _ = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
     hint = mask / 255
     glyph_scale = 1
-    glyphs = draw_glyph2(selffont, _input_file, contours[0], scale=glyph_scale, width=width, height=height)
 
-    return hint, glyphs
+    # Parse multiple texts: split by newlines
+    if isinstance(_input_file, str):
+        text_list = [t.strip() for t in _input_file.splitlines() if t.strip()]
+    else:
+        text_list = []
+
+    # Sort contours from top to bottom using top-most y
+    def contour_top_y(cnt):
+        ys = cnt[:, 0, 1] if len(cnt.shape) == 3 else cnt[:, 1]
+        return int(np.min(ys)) if ys.size > 0 else 0
+
+    contours = sorted(contours, key=contour_top_y)
+
+    # Compose glyphs by placing each text into the corresponding contour
+    glyphs_canvas = np.zeros((height, width, 1), dtype=np.float64)
+    for idx, cnt in enumerate(contours):
+        if idx >= len(text_list):
+            break
+        gly = draw_glyph2(selffont, text_list[idx], cnt, scale=glyph_scale, width=width, height=height, add_space=add_space)
+        glyphs_canvas = np.maximum(glyphs_canvas, gly)
+
+    return hint, glyphs_canvas
 
 def brush_button_func(brush_image):
     _mask = brush_image['layers'][0][:, :, :3]
     _mask = np.where(_mask > 0, 255, 0)
     return _mask[:,:,0], [_mask[:,:,0]]
 
-def update_mask_func(edit_mask, edit_text):
+def update_mask_func(edit_mask, edit_text, add_space):
     background = edit_mask['background']
     background = background[:, :, :3]
     mask, _ = brush_button_func(edit_mask)
 
-    hint, glyphs = get_glyph_pos(mask, edit_text, background.shape[1], background.shape[0])
+    hint, glyphs = get_glyph_pos(mask, edit_text, background.shape[1], background.shape[0], add_space=add_space)
     hint = hint.astype('uint8') * 255
     glyphs = (1 - glyphs.astype('uint8') ) * 255
     glyphs = glyphs[:,:,0]
@@ -232,6 +252,7 @@ with gr.Blocks() as demo:
                     edit_mask = gr.ImageEditor(type="numpy", interactive=True)
                 with gr.Column():
                     edit_text = gr.Textbox(label="Input text")
+                    edit_btn = gr.Button("Generate glyph and mask")
                     edit_btn = gr.Button("Generate glyph and mask")
 
             prompt = gr.Textbox(label="Prompt")
